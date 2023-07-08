@@ -9,7 +9,7 @@ import Foundation
 import CoreBluetooth
 
 // CentralManagerは、セントラル（Apple Watch）の役割を担当するクラスです
-class CentralOcBasicManager: NSObject, ObservableObject, CBCentralManagerDelegate, CBPeripheralDelegate {
+class DemoBasicCentralController: NSObject, ObservableObject, CBCentralManagerDelegate, CBPeripheralDelegate {
     @Published var isConnected = false
     @Published var isScanning = false
     @Published var currentRssi = 0
@@ -21,11 +21,10 @@ class CentralOcBasicManager: NSObject, ObservableObject, CBCentralManagerDelegat
     var sumScanning = 0
     var scanTimer: Timer?
     @Published var rssis:[Int] = []
-    let serviceUUIDString = "e7d61ea3-f8dd-49c8-8f2f-f24a0020002e"  // 見せるだけのやつ
-    //let serviceUUID = CBUUID(string: "0000feaa-0000-1000-8000-00805f9b34fb")  // BP108
-    //let serviceUUID = CBUUID(string: "e7d61ea3-f8dd-49c8-8f2f-f24a0020002e")    // iPhoneのBLE
     let serviceUUID = CBUUID(string: "0000180f-0000-1000-8000-00805f9b34fb")  // FSC-1301
-    let characteristicUUID = CBUUID(string: "74278bda-b644-4520-8f0c-720eaf059935") // 今回はUUIDの形式ならなんでもよい
+    
+    let beaconIdentifyUUIDForiPad = "998330A6-702C-B1EA-2C10-B107B9116B96"
+    let beaconIdentifyUUIDForiPhone = "6FFD20E4-6260-944E-5A75-9D3EA9063815"
     
     @Published var isOneMeterAway = false
     
@@ -70,12 +69,12 @@ class CentralOcBasicManager: NSObject, ObservableObject, CBCentralManagerDelegat
     
     // ペリフェラルを検出したときに呼ばれるメソッドです。サービス見つかった時に呼ばれるデリゲートメソッド
     func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String: Any], rssi RSSI: NSNumber) {
-        
+
         print(RSSI.intValue)
         print(peripheral.identifier.uuidString)
         
         //FCS-1301でやる場合
-        if(peripheral.identifier.uuidString == "6FFD20E4-6260-944E-5A75-9D3EA9063815"){
+        if(peripheral.identifier.uuidString == beaconIdentifyUUIDForiPad){
             //print("ペリフェラル（送信機）を検出したよ")
             let uuid = peripheral.identifier.uuidString
             //let name = peripheral.name

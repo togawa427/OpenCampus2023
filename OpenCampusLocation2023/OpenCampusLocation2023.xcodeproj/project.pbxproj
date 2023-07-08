@@ -15,6 +15,8 @@
 		AB6F48742A59935F00DD6683 /* DemoWheelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6F48732A59935F00DD6683 /* DemoWheelController.swift */; };
 		AB6F48772A5994BF00DD6683 /* DemoBasicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6F48762A5994BF00DD6683 /* DemoBasicView.swift */; };
 		AB6F48792A5994CD00DD6683 /* DemoWheelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6F48782A5994CD00DD6683 /* DemoWheelView.swift */; };
+		AB6F487B2A59A78900DD6683 /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6F487A2A59A78900DD6683 /* ChartView.swift */; };
+		AB6F487D2A59A79500DD6683 /* ChartDualView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6F487C2A59A79500DD6683 /* ChartDualView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		AB6F48752A59941E00DD6683 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		AB6F48762A5994BF00DD6683 /* DemoBasicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoBasicView.swift; sourceTree = "<group>"; };
 		AB6F48782A5994CD00DD6683 /* DemoWheelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoWheelView.swift; sourceTree = "<group>"; };
+		AB6F487A2A59A78900DD6683 /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
+		AB6F487C2A59A79500DD6683 /* ChartDualView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartDualView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +97,8 @@
 				AB6F48632A59923D00DD6683 /* ContentView.swift */,
 				AB6F48762A5994BF00DD6683 /* DemoBasicView.swift */,
 				AB6F48782A5994CD00DD6683 /* DemoWheelView.swift */,
+				AB6F487A2A59A78900DD6683 /* ChartView.swift */,
+				AB6F487C2A59A79500DD6683 /* ChartDualView.swift */,
 			);
 			path = VIews;
 			sourceTree = "<group>";
@@ -169,7 +175,9 @@
 			files = (
 				AB6F48772A5994BF00DD6683 /* DemoBasicView.swift in Sources */,
 				AB6F48792A5994CD00DD6683 /* DemoWheelView.swift in Sources */,
+				AB6F487D2A59A79500DD6683 /* ChartDualView.swift in Sources */,
 				AB6F48642A59923D00DD6683 /* ContentView.swift in Sources */,
+				AB6F487B2A59A78900DD6683 /* ChartView.swift in Sources */,
 				AB6F48622A59923D00DD6683 /* OpenCampusLocation2023App.swift in Sources */,
 				AB6F48742A59935F00DD6683 /* DemoWheelController.swift in Sources */,
 				AB6F48722A59934400DD6683 /* DemoBasicController.swift in Sources */,
