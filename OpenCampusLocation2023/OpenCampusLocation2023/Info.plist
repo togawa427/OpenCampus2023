@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>CFBundleDocumentTypes</key>
+        <array>
+            <dict/>
+        </array>
+        <key>CFBundleURLTypes</key>
+        <array>
+            <dict>
+                <key>CFBundleTypeRole</key>
+                <string>Editor</string>
+                <key>CFBundleURLSchemes</key>
+                <array>
+                    <string>com.googleusercontent.apps.768306004606-5d4fo02d3t9ckp689655057to67iucrb</string>
+                </array>
+            </dict>
+        </array>
+        <key>UIBackgroundModes</key>
+        <array>
+            <string>bluetooth-central</string>
+            <string>bluetooth-peripheral</string>
+            <string>fetch</string>
+            <string>location</string>
+            <string>processing</string>
+            <string>バックグラウンドでbluetooth-centralを行います</string>
+            <string>バックグラウンドでbluetooth-peripheralを行います</string>
+        </array>
+    </dict>
+</plist>
