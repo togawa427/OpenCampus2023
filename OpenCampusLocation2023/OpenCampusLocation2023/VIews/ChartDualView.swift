@@ -44,6 +44,11 @@ struct ChartDualView: View {
             }
             .chartXScale(domain: (Double(yWheel.count) * intervalSec) - Double(plotRange) ... Double(yWheel.count) * intervalSec)
             .chartYScale(domain: -100 ... 0)
+            .chartXAxis{
+                AxisMarks(values: .automatic(desiredCount: 3)) { value in
+                    AxisGridLine(stroke: StrokeStyle(lineWidth: 1))
+                }
+            }
             .chartForegroundStyleScale(["タイヤ": .pink, "介護者": .green])
         }
     }

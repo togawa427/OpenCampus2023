@@ -65,6 +65,17 @@ class DemoWheelCentralController: NSObject, ObservableObject, CBCentralManagerDe
     
     //startScanningメソッドで、指定されたサービスUUIDを持つペリフェラルをスキャンします。
     func startScanning() {
+        // 要素数が大きくなりすぎないようにするための処理
+        if(Double(rssisWheel.count) * intervalSec > 60.0){
+            var tmpRssis:[Int] = []
+            let lengthPerInterval = Int(Double(1)/intervalSec)
+            tmpRssis = Array(rssisWheel[30*lengthPerInterval...60*lengthPerInterval])
+            rssisWheel = tmpRssis
+            tmpRssis = Array(rssisPerson[30*lengthPerInterval...60*lengthPerInterval])
+            rssisPerson = tmpRssis
+            
+        }
+        
         print("スキャン開始")
         isScanning = true
         //centralManager.scanForPeripherals(withServices: [serviceUUID], options: nil)

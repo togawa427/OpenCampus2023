@@ -17,6 +17,6 @@ struct DemoBasicView: View {
     
     var body: some View {
         // graph
-        ChartView(y:centralManager.rssis, intervalSec:centralManager.intervalSec)
+        ChartView(y:centralManager.rssis, intervalSec:centralManager.intervalSec, countScanning: centralManager.countScanning)
     }
 }

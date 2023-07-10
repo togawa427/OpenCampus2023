@@ -16,6 +16,7 @@ class DemoBasicCentralController: NSObject, ObservableObject, CBCentralManagerDe
     @Published var pastRssi = 0
     @Published var intervalSec = 0.2
     @Published var currentTime = 0
+    @Published var countScanning = 0
     var centralManager: CBCentralManager!
     var peripheral: CBPeripheral?
     var sumScanning = 0
@@ -55,10 +56,21 @@ class DemoBasicCentralController: NSObject, ObservableObject, CBCentralManagerDe
     
     //startScanningメソッドで、指定されたサービスUUIDを持つペリフェラルをスキャンします。
     func startScanning() {
+        
+        // 要素数が大きくなりすぎないようにするための処理
+        if(Double(rssis.count) * intervalSec > 60.0){
+            var tmpRssis:[Int] = []
+            let lengthPerInterval = Int(Double(1)/intervalSec)
+            tmpRssis = Array(rssis[30*lengthPerInterval...60*lengthPerInterval])
+            rssis = tmpRssis
+        }
+        
         print("スキャン開始")
         isScanning = true
         centralManager.scanForPeripherals(withServices: [serviceUUID], options: nil)
         //centralManager.scanForPeripherals(withServices: nil, options: nil)
+        
+        countScanning = countScanning + 1
         
         // intervalSec後にスキャン停止
         scanTimer = Timer.scheduledTimer(withTimeInterval: intervalSec, repeats: false) { [weak self] _ in

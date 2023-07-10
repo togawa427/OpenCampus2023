@@ -19,6 +19,8 @@ struct PointsData: Identifiable {
 struct ChartView: View {
     var y: [Int]
     var intervalSec: Double
+    var countScanning: Int
+    
     
     // sampleデータを定義
     //    @State var data: [PointsData] = [
@@ -45,6 +47,11 @@ struct ChartView: View {
             }
             .chartXScale(domain: (Double(y.count) * intervalSec) - Double(plotRange) ... Double(y.count) * intervalSec)
             .chartYScale(domain: -100 ... 0)
+            .chartXAxis{
+                AxisMarks(values: .automatic(desiredCount: 3)) { value in
+                    AxisGridLine(stroke: StrokeStyle(lineWidth: 1))
+                }
+            }
         }
     }
 }
